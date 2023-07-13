@@ -11,14 +11,15 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
