@@ -1,12 +1,22 @@
 <app-navbar></app-navbar>
 
-<mat-grid-list cols="2" rowHeight="3:1" gutterSize="15">
+<mat-grid-list cols="3" rowHeight="4:2" gutterSize="15">
     <div *ngFor="let p of products">
         <mat-grid-tile>
             <div class="content">
-                {{p.name}}
-                {{p.price | currency}}
-                <button (click)="addToCard(p)">Add to Cart</button>
+                <h2>{{p.name}}</h2>
+                <h3>{{p.price | currency}}</h3>
+                <button mat-mini-fab 
+                        color="primary" 
+                        (click)="addToCart(p)">
+                         <mat-icon>plus_one</mat-icon>
+                </button>
+                <button mat-mini-fab color="warn" (click)="deleteToCart(p)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <div *ngIf="p.count > 0">
+                    <h3>Cantidad en carrito: {{p.count}}</h3>
+                </div>
             </div>
         </mat-grid-tile>
     </div>

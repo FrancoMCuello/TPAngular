@@ -1,6 +1,7 @@
 mat-grid-tile {
-  background: lightblue;
+  background: rgb(153, 176, 194);
   border: 1px solid black;
+  border-radius: 25px 0 25px 0;
 
 }
 
@@ -17,4 +18,11 @@ mat-grid-tile {
     padding: 0;
     margin: 0;
     flex-direction: column;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    width: 3em;
+    margin: 0.5em;
 }
