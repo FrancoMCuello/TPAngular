@@ -6,17 +6,11 @@ mat-grid-tile {
 }
 
 .content{
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 0;
-    margin: 0;
     flex-direction: column;
 }
 
@@ -25,4 +19,17 @@ button{
     justify-content: center;
     width: 3em;
     margin: 0.5em;
+}
+
+.filtro{
+  display: flex;
+  flex-direction: column;
+}
+.botonesFiltro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(187, 107, 107);
+  width: 15em;
+  border: 1px solid black;
 }
