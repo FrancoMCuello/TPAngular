@@ -2,7 +2,9 @@
     flex: 1 1 auto;
   }
 
+
 mat-toolbar{
+  background-color: rgb(136, 131, 110);
     width: 100%;
     display:flex;
     flex-direction: row;

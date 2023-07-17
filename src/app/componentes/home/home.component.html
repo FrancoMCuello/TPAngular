@@ -1,6 +1,8 @@
 <app-navbar></app-navbar>
 
-<p>
+<!-- Boton para Aplicar filtros -->
+<div class="boton-filter">
+  <p>
     <mat-toolbar color="disable">
       <button mat-icon-button id="filter" (click)="showFilter()">
         <mat-icon>menu</mat-icon>
@@ -9,36 +11,42 @@
       <span class="example-spacer"></span>
     </mat-toolbar>
   </p>
-  
-  <div *ngIf="oFilter">
-    <div class="filtro">
-    <h2>Categorias</h2>
-    <button class="botonesFiltro" mat-stroked-button (click)="selectAll()" value="Electrodomesticos">Seleccionar Todo</button>
-    <button class="botonesFiltro" mat-stroked-button (click)="selectElect()" value="Electrodomesticos">Electrodomesticos</button>
-    <button class="botonesFiltro" mat-stroked-button (click)="selectMuebles()" value="Muebles">Muebles</button>
-    </div>
-  </div>
+</div>
 
-<mat-grid-list cols="3" rowHeight="3:2" gutterSize="15">
-<div [(ngModel)]="categoriaSeleccionada">
-    <div *ngFor="let p of filtrarProductos()">
+<!-- Filtros -->
+<div class="filter">
+  <div *ngIf="filterOpen">
+
+    <h2>Categorias:</h2>
+    <button class="botonesFiltro" mat-stroked-button (click)="selectAll()" value="Electrodomesticos">Seleccionar
+      Todo</button>
+    <button class="botonesFiltro" mat-stroked-button (click)="selectElect()"
+      value="Electrodomesticos">Electrodomesticos</button>
+    <button class="botonesFiltro" mat-stroked-button (click)="selectMuebles()" value="Muebles">Muebles</button>
+  </div>
+</div>
+
+<!-- Productos -->
+<div class="productos">
+  <mat-grid-list cols="3" rowHeight="3:2" gutterSize="15">
+    <div [(ngModel)]="categoriaSeleccionada">
+      <div *ngFor="let p of filtrarProductos()">
         <mat-grid-tile>
-            <div class="content">
-                <h2>{{p.name}}</h2>
-                <h3>{{p.price | currency}}</h3>
-                <button mat-mini-fab 
-                        color="primary" 
-                        (click)="addToCart(p)">
-                         <mat-icon>plus_one</mat-icon>
-                </button>
-                <button mat-mini-fab color="warn" (click)="deleteToCart(p)">
-                    <mat-icon>delete</mat-icon>
-                </button>
-                <div *ngIf="p.count > 0">
-                    <h3>Cantidad en carrito: {{p.count}}</h3>
-                </div>
+          <div class="content">
+            <h2>{{p.name}}</h2>
+            <h3>{{p.price | currency}}</h3>
+            <button mat-mini-fab color="primary" (click)="addToCart(p)">
+              <mat-icon>plus_one</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" (click)="deleteToCart(p)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <div *ngIf="p.count > 0">
+              <h3>Cantidad en carrito: {{p.count}}</h3>
             </div>
+          </div>
         </mat-grid-tile>
       </div>
-      </div>
-</mat-grid-list>
+    </div>
+  </mat-grid-list>
+</div>

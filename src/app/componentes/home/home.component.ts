@@ -55,23 +55,27 @@ export class HomeComponent {
       count: 0,
       categoria: 'Muebles',
       
-    }
+    },
+   /**  {
+      id:4,
+      name: 'Tv',
+      price: 150000,
+      count: 0,
+      categoria: 'Electrodomesticos',
+    }*/
   ];
-
-  oFilter: boolean = false;
-  filter: string = 'all';
-
-  categoriaSeleccionada: string = '';
 
   constructor(private cartService: CartService){
   };
 
   //Mostrar Filtro
+  filterOpen: boolean = false;
+
   showFilter():void{
-    this.oFilter = true;
+    this.filterOpen = true;
     }
 
-  //Agregar y Quitar del Carrito
+  //Agregar y Quitar Producto del Carrito
   addToCart(product: Product){
     this.cartService.addCart(product);
   }
@@ -81,6 +85,7 @@ export class HomeComponent {
   }
 
   //Aplicar filtro
+  categoriaSeleccionada: string = '';
 
   selectAll(){
     this.categoriaSeleccionada = '';

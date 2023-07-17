@@ -18,6 +18,7 @@ export class CartService {
 
   constructor() { }
 
+  //Servicio para agregar producto al carrito
   addCart(product: Product){
      this.cart.products.push(product);
      this.cart.price += product.price;
@@ -26,7 +27,7 @@ export class CartService {
      console.log(`Se agrego una ${product.name} a carrito con id ${this.cart.id}`,  this.cart)
      this.cartSubject.next(this.cart);
   }
-
+  //Servicio para quitar producto del carrito 
   deleteCart(product: Product){
     const nameProduct: any = this.cart.products.find(p => p === product);
     

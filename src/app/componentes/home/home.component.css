@@ -1,5 +1,5 @@
 mat-grid-tile {
-  background: rgb(153, 176, 194);
+  background: rgb(136, 131, 110);
   border: 1px solid black;
   border-radius: 25px 0 25px 0;
 
@@ -12,8 +12,11 @@ mat-grid-tile {
     justify-content: center;
     height: 100%;
     flex-direction: column;
+    margin: 15px;
 }
-
+.mat-toolbar{
+  background-color: rgb(136, 131, 110);
+}
 button{
     display: flex;
     justify-content: center;
@@ -21,15 +24,23 @@ button{
     margin: 0.5em;
 }
 
-.filtro{
+.filter{
+  background-color: rgb(136, 131, 110);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 .botonesFiltro{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(187, 107, 107);
   width: 15em;
   border: 1px solid black;
+}
+
+.mat-mdc-fab.mat-primary, .mat-mdc-mini-fab.mat-primary {
+  --mdc-fab-container-color: rgb(37, 36, 32);
+  --mdc-fab-icon-color: #fff;
+  --mat-mdc-fab-color: #fff;
 }

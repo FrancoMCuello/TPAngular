@@ -30,8 +30,6 @@ constructor(private CartService: CartService){
 productCount: number = 0;
 cartPrice: number = 0;
 
-productElec: string = "Heladera";
-
 ngOnInit(): void{
   //Metodo para ver los productos agregados y el precio del carrito
   this.CartService.cartSubject.subscribe( cart => {
@@ -40,8 +38,6 @@ ngOnInit(): void{
   });
 
 };
-
-
 
 }
 
