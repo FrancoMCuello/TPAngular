@@ -35,22 +35,16 @@ export class HomeComponent {
       id: 1,
       name: 'Mesa',
       price: 15000,
-      count:0,
-      categoria: 'Muebles',
     },
     {
       id: 2,
       name: 'Heladera',
       price: 200000,
-      count:0,
-      categoria: 'Electrodomesticos',
     },
     {
       id:3,
       name: 'Silla',
       price: 4000,
-      count: 0,
-      categoria: 'Muebles',
       
     },
    /**  {
