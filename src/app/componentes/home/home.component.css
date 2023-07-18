@@ -17,30 +17,19 @@ mat-grid-tile {
 .mat-toolbar{
   background-color: rgb(136, 131, 110);
 }
-button{
+.button{
+
     display: flex;
     justify-content: center;
     width: 3em;
-    margin: 0.5em;
+    padding: 2em;
+    margin: 3em;
 }
 
-.filter{
-  background-color: rgb(136, 131, 110);
+.botones{
   display: flex;
-  flex-direction: row;
-  padding: 15px;
-  margin-bottom: 15px;
-}
-.botonesFiltro{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 15em;
-  border: 1px solid black;
+  justify-content: space-around;
+  margin: 3em;
+  width: 100%;
 }
 
-.mat-mdc-fab.mat-primary, .mat-mdc-mini-fab.mat-primary {
-  --mdc-fab-container-color: rgb(37, 36, 32);
-  --mdc-fab-icon-color: #fff;
-  --mat-mdc-fab-color: #fff;
-}

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { Product } from 'src/app/models/products';
-import { CartService } from '../../Servicios/cart.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -20,7 +18,6 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     MatGridListModule,
-    NavbarComponent,
     CommonModule,
     MatButtonModule,
     MatDividerModule,
@@ -65,47 +62,20 @@ export class HomeComponent {
     }*/
   ];
 
-  constructor(private cartService: CartService){
+  constructor(){
   };
 
   //Mostrar Filtro
-  filterOpen: boolean = false;
+  showP: boolean = true;
 
-  showFilter():void{
-    this.filterOpen = true;
+  showProduct():void{
+    this.showP = true;
     }
 
-  //Agregar y Quitar Producto del Carrito
-  addToCart(product: Product){
-    this.cartService.addCart(product);
-  }
-  
-  deleteToCart(product: Product){
-    this.cartService.deleteCart(product);
-  }
+   hideProduct():void{
+      this.showP = false;
+      }
 
-  //Aplicar filtro
-  categoriaSeleccionada: string = '';
-
-  selectAll(){
-    this.categoriaSeleccionada = '';
-  }
-
-  selectElect(){
-    this.categoriaSeleccionada = "Electrodomesticos";
-  }
-  selectMuebles(){
-    this.categoriaSeleccionada = "Muebles";
-  }
-
-  filtrarProductos() {
-    if (this.categoriaSeleccionada === '') {
-      return this.products;
-    } else {
-      return this.products.filter(product => product.categoria === this.categoriaSeleccionada);
-    }
-  }
-  
 }
 
 

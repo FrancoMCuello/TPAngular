@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './componentes/home/home.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    NavbarComponent,
     HomeComponent
   ],
   providers: [],
